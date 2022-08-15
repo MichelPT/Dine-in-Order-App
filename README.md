@@ -1,16 +1,8 @@
-# getx_project
+# Dine-in Order App
 
-A new Flutter project.
+Isnpired by one of the restaurant that I know, where they provide an app to order the dishes in the restaurant.
+I think this app would be really helpful to increase efficiency in the management. Just a few clicks, patience, and your food will be there right before you.
 
-## Getting Started
+### Notes
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I simply made this program to boost my motivation in learning Flutter, especially on GetX, which is for me, pretty difficult to cover all of the materials. By making this project, I hope I could get more experience and learn Flutter deeper.
