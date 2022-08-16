@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_project/constants/routeConstant.dart';
+import 'package:getx_project/constants/route_constant.dart';
 import 'package:getx_project/controllers/routeController.dart';
 import 'package:getx_project/pages/NotFound.dart';
-import 'package:getx_project/pages/loginScreen.dart';
 
 void main() {
   runApp(const MyApp());

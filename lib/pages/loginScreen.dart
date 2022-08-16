@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:getx_project/constants/route_constant.dart';
 
 class loginScreen extends StatefulWidget {
   const loginScreen({Key? key}) : super(key: key);
@@ -22,19 +24,19 @@ class _loginScreenState extends State<loginScreen> {
 
             Padding(
               padding: EdgeInsets.all(30), 
-              child: Text("Login",
+              child: Text("\'logo_resto\'",
                 style: 
                   TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 40),
-                textDirection: TextDirection.rtl,
+
                 ),
               ),
               
-            SizedBox(height:15),
+            SizedBox(height:155),
 
             Padding(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
@@ -51,7 +53,7 @@ class _loginScreenState extends State<loginScreen> {
               
 
             Padding(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: TextField(
                 obscureText: true,
                 keyboardType: TextInputType.emailAddress,
@@ -66,6 +68,46 @@ class _loginScreenState extends State<loginScreen> {
                 ),
                 ),
               ),
+
+              Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
+              child: ElevatedButton(
+                onPressed:() {
+                  Get.toNamed(PagesRoute.homePage);
+                },
+                child:Text("Login",
+                style: TextStyle(
+                  fontSize: 15
+                ),),
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
+                  fixedSize: MaterialStateProperty.all(Size(80, 50))
+              ) 
+              )
+              ),
+
+              Center(
+                child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't have an account yet?",
+                  style: TextStyle(
+                    fontSize: 16
+                  )
+                  ),
+                  TextButton(
+                    onPressed:() {
+                      Get.toNamed(PagesRoute.registerPage);
+                    },
+                    child:Text("Register now!",
+                     style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold
+                  )))
+                ],
+              )
+              )
+              
           ],
         )
         )
