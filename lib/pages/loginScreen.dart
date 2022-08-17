@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:getx_project/constants/route_constant.dart';
 
@@ -20,20 +18,15 @@ class _loginScreenState extends State<loginScreen> {
         ListView(
           children: [
 
-            SizedBox(height:55),
+            SizedBox(height:75),
 
-            Padding(
-              padding: EdgeInsets.all(30), 
-              child: Text("\'logo_resto\'",
-                style: 
-                  TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40),
-
-                ),
-              ),
+            Container(
+              child: Image.asset('assets/images/lemonia_logo.png',
+              height: 200,
+              )
+            ),
               
-            SizedBox(height:155),
+            SizedBox(height:75),
 
             Padding(
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -56,8 +49,9 @@ class _loginScreenState extends State<loginScreen> {
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: TextField(
                 obscureText: true,
-                keyboardType: TextInputType.emailAddress,
+                keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
+                  fillColor: Colors.blueGrey,
                   hintText: "Password",
                   border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(15))
                   )

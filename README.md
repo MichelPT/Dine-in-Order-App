@@ -10,6 +10,5 @@ I think this app would be really helpful to increase efficiency in the managemen
 
 ### Notes
 
-
-
+This is an ONGOING PROJECT.
 I simply made this program to boost my motivation in learning Flutter, especially on GetX, which is for me, pretty difficult to cover all of the materials. By making this project, I hope I could get more experience and learn Flutter deeper.
