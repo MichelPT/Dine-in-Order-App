@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       unknownRoute: GetPage(name:PagesRoute.unknownPage, page:() => NotFound()),
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.yellow    //home: loginScreen()
+        primarySwatch: Colors.red  //home: loginScreen()
       ),);
   }
 }

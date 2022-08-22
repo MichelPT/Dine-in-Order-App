@@ -116,6 +116,9 @@ class _registerScreenState extends State<registerScreen> {
                           text = "Wrong email format";
                           }
                         else {
+                          await firebaseAuth.createUserWithEmailAndPassword(
+                          email: _emailController.text, 
+                          password: _passwordController.text);
                           Navigator.popAndPushNamed(context, '/loginScreen',);
                         }
                         Get.snackbar(
@@ -124,9 +127,6 @@ class _registerScreenState extends State<registerScreen> {
                           duration: Duration(milliseconds: 2000),
                           backgroundColor: Colors.grey.shade400);
                         
-                        await firebaseAuth.createUserWithEmailAndPassword(
-                          email: _emailController.text, 
-                          password: _passwordController.text);
                       },
                     child: Text('Register'),
                     ),

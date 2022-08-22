@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "467676125341",
+    "project_id": "lemonia-order-app",
+    "storage_bucket": "lemonia-order-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467676125341:android:de7fea326ca3ccbc701c74",
+        "android_client_info": {
+          "package_name": "com.example.getx_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467676125341-54va74g7l0ruh4k2penmcfdnlr3hpdq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFyZeK6xaM-jFBUUVmnzhzR9DVFR4YlgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467676125341-54va74g7l0ruh4k2penmcfdnlr3hpdq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
