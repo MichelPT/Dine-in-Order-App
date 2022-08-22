@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_project/constants/route_constant.dart';
@@ -10,6 +11,9 @@ class loginScreen extends StatefulWidget {
 }
 
 class _loginScreenState extends State<loginScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +35,7 @@ class _loginScreenState extends State<loginScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: TextField(
+                controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   hintText: "Email",
@@ -48,6 +53,7 @@ class _loginScreenState extends State<loginScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: TextField(
+                controller: _passwordController,
                 obscureText: true,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
@@ -67,6 +73,10 @@ class _loginScreenState extends State<loginScreen> {
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
               child: ElevatedButton(
                 onPressed:() {
+                  _firebaseAuth..signInWithEmailAndPassword(
+                    email: _emailController.text, 
+                    password: _passwordController.text
+                    );
                   Get.toNamed(PagesRoute.homePage);
                 },
                 child:Text("Login",

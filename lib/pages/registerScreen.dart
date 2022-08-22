@@ -14,7 +14,7 @@ class _registerScreenState extends State<registerScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordConfirmController = TextEditingController();
-  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +116,7 @@ class _registerScreenState extends State<registerScreen> {
                           text = "Wrong email format";
                           }
                         else {
-                          await firebaseAuth.createUserWithEmailAndPassword(
+                          await _firebaseAuth.createUserWithEmailAndPassword(
                           email: _emailController.text, 
                           password: _passwordController.text);
                           Navigator.popAndPushNamed(context, '/loginScreen',);
