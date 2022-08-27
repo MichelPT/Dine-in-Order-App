@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "467676125341",
-    "project_id": "lemonia-order-app",
-    "storage_bucket": "lemonia-order-app.appspot.com"
+    "project_number": "72085578066",
+    "project_id": "dine-in-project-4b703",
+    "storage_bucket": "dine-in-project-4b703.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:467676125341:android:de7fea326ca3ccbc701c74",
+        "mobilesdk_app_id": "1:72085578066:android:78f27534d824cf3ffeda8b",
         "android_client_info": {
           "package_name": "com.example.getx_project"
         }
       },
       "oauth_client": [
         {
-          "client_id": "467676125341-54va74g7l0ruh4k2penmcfdnlr3hpdq5.apps.googleusercontent.com",
+          "client_id": "72085578066-6n7nl0rv8b5co91s82p49qq8m1s2fr3f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCFyZeK6xaM-jFBUUVmnzhzR9DVFR4YlgY"
+          "current_key": "AIzaSyC3146FfD1OmYxk0tnnGi0OUunVTIk45jU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "467676125341-54va74g7l0ruh4k2penmcfdnlr3hpdq5.apps.googleusercontent.com",
+              "client_id": "72085578066-6n7nl0rv8b5co91s82p49qq8m1s2fr3f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
