@@ -1,14 +1,16 @@
-# Dine-in Order App
+# flutter_api_starter
 
-Inspired by one of the restaurant that I know, where they provide an app to order the dishes in the restaurant.
-I think this app would be really helpful to increase efficiency in the management. Just a few clicks, patience, and your food will be there right before you.
+A new Flutter project.
 
-## Features
+## Getting Started
 
-1. If the user has an account for the restaurant as a member, they could get some benefits through discounts, vouchers, and other special offers from the restaurant.
-2. Even though the user doesn't have an account, they still can order as a normal customer.
+This project is a starting point for a Flutter application.
 
-### Notes
+A few resources to get you started if this is your first Flutter project:
 
-This is an ONGOING PROJECT.
-I simply made this program to boost my motivation in learning Flutter, especially on GetX, which is for me, pretty difficult to cover all of the materials. By making this project, I hope I could get more experience and learn Flutter deeper.
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

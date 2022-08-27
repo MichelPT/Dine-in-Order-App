@@ -1,4 +1,4 @@
-package com.example.getx_project
+package com.example.flutter_api_starter
 
 import io.flutter.embedding.android.FlutterActivity
 

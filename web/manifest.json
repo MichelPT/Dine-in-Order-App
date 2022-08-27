@@ -1,6 +1,6 @@
 {
-    "name": "getx_project",
-    "short_name": "getx_project",
+    "name": "flutter_api_starter",
+    "short_name": "flutter_api_starter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

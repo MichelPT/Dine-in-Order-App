@@ -1,20 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class registerScreen extends StatefulWidget {
-  const registerScreen({Key? key}) : super(key: key);
+  const registerScreen({ Key? key }) : super(key: key);
 
   @override
   State<registerScreen> createState() => _registerScreenState();
 }
 
 class _registerScreenState extends State<registerScreen> {
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordConfirmController = TextEditingController();
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  late TextEditingController _emailController = TextEditingController();
+  late TextEditingController _passwordController = TextEditingController();
+  late TextEditingController _passwordConfirmController = TextEditingController();
+  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +22,6 @@ class _registerScreenState extends State<registerScreen> {
           padding: EdgeInsets.all(34.0),
           child: ListView(
             children: <Widget>[
-              const SizedBox(height: 30),
-
               Container(
                 margin: EdgeInsets.only(top: 20),
                 child: const Text("Register",
@@ -36,13 +32,20 @@ class _registerScreenState extends State<registerScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
+              Text("Please fill in the form to begin creating your account",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14
+                ),
+              ),
        
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
 
               Container(
                   width: 140,
                   child: TextField(
-                    controller: _usernameController,
+                    controller: _emailController,
                     decoration: InputDecoration(
                       labelText: 'Username',
                       labelStyle: TextStyle(
@@ -106,31 +109,30 @@ class _registerScreenState extends State<registerScreen> {
                         )
                       ),
                       onPressed:() async {
-                        bool emailValid = RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$').hasMatch(_emailController.text);
                         String text = "";
-                        if (_usernameController.text.isEmpty||_passwordController.text.isEmpty||_emailController.text.isEmpty||_passwordConfirmController.text.isEmpty) {
-                          text = "Please input your username, email, and password";
+                        bool emailValid = RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$').hasMatch(_emailController.text);
+                        if (_passwordController.text.isEmpty||_emailController.text.isEmpty||_passwordConfirmController.text.isEmpty) {
+                          text = "Please make sure all fields are not empty";
                         } else if (_passwordController.text!=_passwordConfirmController.text) {
                           text = "The password confirmation is wrong";
                         } else if (!emailValid){
                           text = "Wrong email format";
                           }
                         else {
-                          await _firebaseAuth.createUserWithEmailAndPassword(
-                          email: _emailController.text, 
-                          password: _passwordController.text);
                           Navigator.popAndPushNamed(context, '/loginScreen',);
                         }
-                        Get.snackbar(
-                          'Invalid input', 
-                          text, 
-                          duration: Duration(milliseconds: 2000),
-                          backgroundColor: Colors.grey.shade400);
-                        
+                        SnackBar snackBar = SnackBar(
+                        content: Text(text));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                        await firebaseAuth.createUserWithEmailAndPassword(
+                          email: _emailController.text, 
+                          password: _passwordConfirmController.text
+                          );
                       },
                     child: Text('Register'),
                     ),
-                   ),
+                   )
             ],
           )
              ),
