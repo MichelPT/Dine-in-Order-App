@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple
       ),
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: loginScreen(),
+      home: const loginScreen(),
     );
   }
 }
