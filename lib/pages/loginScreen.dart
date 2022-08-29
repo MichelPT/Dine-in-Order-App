@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class loginScreen extends StatefulWidget {
@@ -12,7 +13,6 @@ class loginScreen extends StatefulWidget {
 class _loginScreenState extends State<loginScreen> {
   late TextEditingController _emailController = TextEditingController();
   late TextEditingController _passwordController = TextEditingController();
-
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
@@ -61,20 +61,25 @@ class _loginScreenState extends State<loginScreen> {
                       )
                     ),
                     onPressed:() async {
-                      try {
-                        await firebaseAuth.signInWithEmailAndPassword(
-                      email: _emailController.text, 
-                      password: _passwordController.text
-                      ).then((value) => Navigator.popAndPushNamed(context, '/homePage'));
-                      } catch (e) {
-                      }
                       String text = "";
                       if (_emailController.text.isEmpty||_passwordController.text.isEmpty) {
                         text = "Please input your email or password";
-                      } else {text = "Incorrect email or password";}
-                      SnackBar snackBar = SnackBar(
-                        content: Text(text));
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        GetSnackBar(title: "Cannot Login", message: text,);
+                      }
+                      try {
+                      final credential = await firebaseAuth.signInWithEmailAndPassword(
+                        email: _emailController.text,
+                        password: _passwordController.text
+                      );
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'user-not-found') {
+                        print('No user found for that email.');
+                        } else if (e.code == 'wrong-password') {
+                        print('Wrong password provided for that user.');
+                      } else {
+                        Navigator.pushNamed(context, '/homePage');
+                      }
+                    }
                   },
                   child: Text('Login'),
                   ),  

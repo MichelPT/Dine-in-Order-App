@@ -126,10 +126,21 @@ class _registerScreenState extends State<registerScreen> {
                         content: Text(text));
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
-                        await firebaseAuth.createUserWithEmailAndPassword(
-                          email: _emailController.text, 
-                          password: _passwordConfirmController.text
-                          );
+                        try {
+                      final credential = await firebaseAuth.createUserWithEmailAndPassword(
+                      email: _emailController.text,
+                      password: _passwordController.text,
+                      );
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'weak-password') {
+                          print('The password provided is too weak.');
+                           } else if (e.code == 'email-already-in-use') {
+                          print('The account already exists for that email.');
+                           }
+                      } catch (e) {
+                      print(e);
+                    }
+              
                       },
                     child: Text('Register'),
                     ),
