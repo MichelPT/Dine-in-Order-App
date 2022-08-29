@@ -9,6 +9,7 @@ class registerScreen extends StatefulWidget {
 }
 
 class _registerScreenState extends State<registerScreen> {
+  late TextEditingController _usernameController = TextEditingController();
   late TextEditingController _emailController = TextEditingController();
   late TextEditingController _passwordController = TextEditingController();
   late TextEditingController _passwordConfirmController = TextEditingController();
@@ -45,7 +46,7 @@ class _registerScreenState extends State<registerScreen> {
               Container(
                   width: 140,
                   child: TextField(
-                    controller: _emailController,
+                    controller: _usernameController,
                     decoration: InputDecoration(
                       labelText: 'Username',
                       labelStyle: TextStyle(
